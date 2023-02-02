@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@release/v0.1
+    - uses: actions/checkout@v0.1
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
@@ -34,12 +34,12 @@ jobs:
     - name: Build package
       run: python -m build
     - name: Publish distribution 📦 to Test PyPI
-      uses: pypa/gh-action-pypi-publish@release/v0.1
+      uses: pypa/gh-action-pypi-publish@v0.1
       with:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         repository_url: https://test.pypi.org/legacy/
     - name: Publish 📦 to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v0.1
+      uses: pypa/gh-action-pypi-publish@v0.1
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
